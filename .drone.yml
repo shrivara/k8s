@@ -9,4 +9,6 @@ steps:
     commands:
       - mkdir -p ~/.kube
       - echo "$KUBE_CONFIG" > ~/.kube/config
-      - bin/deploy-cluster.sh
+      - pwd
+      - ls
+      - ./bin/deploy-cluster.sh
