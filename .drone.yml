@@ -11,4 +11,5 @@ steps:
       - echo "$KUBE_CONFIG" > ~/.kube/config
       - pwd
       - ls
-      - ./bin/deploy-cluster.sh
+      - ls bin/deploy-cluster.sh
+      # - ./bin/deploy-cluster.sh
