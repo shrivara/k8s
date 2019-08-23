@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress
+  namespace: kannada-geetha
+  annotations:
+    kubernetes.io/tls-acme: "true"
+    certmanager.k8s.io/cluster-issuer: "letsencrypt-production"
+spec:
+  tls:
+  - secretName: kannada-geetha-tls
+    hosts:
+    - kannadageetha.com
+  rules:
+  - host: kannadageetha.com
+    http:
+      paths:
+      - backend:
+          serviceName: service
+          servicePort: 80
+  - host: www.kannadageetha.com
+    http:
+      paths:
+      - backend:
+          serviceName: service
+          servicePort: 80
