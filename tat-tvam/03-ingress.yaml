@@ -18,9 +18,3 @@ spec:
       - backend:
           serviceName: service
           servicePort: 80
-  - host: www.tat-tvam.com
-    http:
-      paths:
-      - backend:
-          serviceName: service
-          servicePort: 80
