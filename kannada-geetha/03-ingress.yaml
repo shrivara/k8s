@@ -4,8 +4,8 @@ metadata:
   name: ingress
   namespace: kannada-geetha
   annotations:
-    kubernetes.io/tls-acme: "true"
-    certmanager.k8s.io/cluster-issuer: "letsencrypt-production"
+    kubernetes.io/ingress.class: contour
+    cert-manager.io/cluster-issuer: "letsencrypt-production"
 spec:
   tls:
   - secretName: kannada-geetha-tls

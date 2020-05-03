@@ -4,9 +4,8 @@ metadata:
   name: ingress
   namespace: tat-tvam
   annotations:
-    kubernetes.io/tls-acme: "true"
-    certmanager.k8s.io/cluster-issuer: "letsencrypt-production"
-    ingress.kubernetes.io/force-ssl-redirect: "true"
+    kubernetes.io/ingress.class: contour
+    cert-manager.io/cluster-issuer: "letsencrypt-production"
 spec:
   tls:
   - secretName: tat-tvam-tls

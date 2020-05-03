@@ -4,7 +4,7 @@ BASE_DIR=$(dirname "$0")
 
 # versions
 HEPTIO_CONTOUR_VERSION=v0.9.0
-CERT_MANAGER_VERSION=v0.6.2
+CERT_MANAGER_VERSION=v0.14.3
 
 # vendor
 rm -rf "${BASE_DIR}/../vendor"
@@ -19,6 +19,7 @@ curl \
 # cert-manager
 mkdir -p "${BASE_DIR}/../vendor/cert-manager"
 curl \
+  -L \
   -s \
-  "https://raw.githubusercontent.com/jetstack/cert-manager/${CERT_MANAGER_VERSION}/deploy/manifests/cert-manager.yaml" \
+  "https://github.com/jetstack/cert-manager/releases/download/${CERT_MANAGER_VERSION}/cert-manager-legacy.yaml" \
   -o "${BASE_DIR}/../vendor/cert-manager/manifests.yaml"
